@@ -2,8 +2,8 @@ pipeline {
   agent {
     dockerfile {
 	  filename 'Dockerfile.build'
-      args '-u 0:0 -v /var/run/docker.sock:/var/run/docker.sock'
-	  label 'DOCKER'
+          args '-u 0:0 -v /var/run/docker.sock:/var/run/docker.sock'
+	  label 'Ubuntu'
 	}
   }
   
