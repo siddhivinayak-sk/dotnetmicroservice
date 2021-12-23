@@ -36,7 +36,7 @@ pipeline {
 
     stage('Analysis') {
       steps {
-		sh "dotnet /sonar-scanner/SonarScanner.MSBuild.dll begin /k:MyProject /d:sonar.host.url='${SONARQUBE_DOTNET}'"
+		sh "dotnet /sonar-scanner/SonarScanner.MSBuild.dll begin /k:MyProject /d:sonar.host.url='http://www.mysonar.com:9000'"
 		sh "dotnet build"
 		sh "dotnet /sonar-scanner/SonarScanner.MSBuild.dll end"
 	  }
