@@ -36,9 +36,9 @@ pipeline {
 
     stage('Analysis') {
       steps {
-		sh "dotnet /sonar-scanner/SonarScanner.MSBuild.dll begin /k:MyProject /d:sonar.host.url='http://3.110.195.4:9000'"
+		sh "dotnet /sonar-scanner/SonarScanner.MSBuild.dll begin /k:MyProject /d:sonar.host.url='http://3.110.195.4:9000' /d:sonar.login='c87723110deab90be1520f7554dd3b85b7b82427'"
 		sh "dotnet build"
-		sh "dotnet /sonar-scanner/SonarScanner.MSBuild.dll end"
+		sh "dotnet /sonar-scanner/SonarScanner.MSBuild.dll end /d:sonar.login='c87723110deab90be1520f7554dd3b85b7b82427'"
 	  }
 	}
   }
